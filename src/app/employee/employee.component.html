@@ -1,0 +1,82 @@
+<section>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="form-inline">
+<div class="form-group">
+  <label>Search By Name</label>
+  <input type="text" class="form-control" aria-describedby="search-text"
+[(ngModel)]="searchText" placeholder="Search by Name"
+autofocus>
+</div>
+<div class="form-group">
+  <button class="btn btn-primary" (click)="sortByName()">Name</button>
+</div>
+<div class="form-group">
+  <button class="btn btn-primary" (click)="dateSort()">Joining date</button>
+</div>
+
+<div class="form-group">
+  <button class="btn btn-primary" (click)="deleteDept() ">Delete Department</button>
+</div>
+
+
+<!--
+<button class="btn btn-primary" (click)="distinctValue() ">distinct Department</button> -->
+
+<div class="form-group">
+  <button class="btn btn-primary" (click)="searchByExperiencr()">more than 2 yrs </button>
+</div>
+
+
+</div>
+
+      </div>
+      <div class="col-md-12">
+        <table class="table table-bordered table-hover dt-responsive">
+          <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>department</th>
+            <th>joining_date</th>
+          </tr>
+
+          </thead>
+          <tbody >
+
+            <tr *ngFor="let e of employee |appFilter: searchText">
+              <td>{{e.id}}</td>
+              <td>{{e.name}}</td>
+              <td>{{e.department}}</td>
+              <td>{{e.joining_date}}</td>
+
+
+
+          </tr>
+
+          </tbody>
+          </table>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
